@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f5f7" />
+    <title>Qdesign — 3D-конфигуратор тумбы</title>
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand-mark">Q</div>
+        <div>
+          <p class="eyebrow">QDESIGN / 3D CONFIGURATOR</p>
+          <h1>Конструктор тумбы</h1>
+        </div>
+        <span class="status"><span></span> 3D-просмотр</span>
+      </header>
+
+      <main class="layout">
+        <section class="viewer-panel">
+          <div class="viewer-heading">
+            <div>
+              <p class="eyebrow">ПРЕДПРОСМОТР</p>
+              <h2>Ваша тумба</h2>
+            </div>
+            <span class="unit-chip">Размеры в мм</span>
+          </div>
+
+          <div class="viewer-wrap">
+            <div id="viewer" aria-label="Интерактивная 3D-модель тумбы"></div>
+            <div class="viewer-hint">Перетаскивайте мышью · Колесо — масштаб</div>
+            <div class="dimension-summary" id="dimension-summary">600 × 800 × 400 мм</div>
+            <div class="loading" id="loading">Загрузка 3D-модели…</div>
+          </div>
+
+          <div class="viewer-footer">
+            <span><i class="legend-dot"></i> Материал: <strong id="material-name">Орех</strong></span>
+            <button type="button" id="reset-view" class="text-button">Сбросить ракурс ↺</button>
+          </div>
+        </section>
+
+        <aside class="settings-panel">
+          <p class="eyebrow">НАСТРОЙКИ</p>
+          <h2>Параметры тумбы</h2>
+          <p class="muted">Меняйте размеры и материал — модель обновится сразу.</p>
+
+          <form id="dimensions-form">
+            <label class="field">
+              <span>Ширина <small>мм</small></span>
+              <div class="input-wrap">
+                <input id="width" name="width" type="number" min="250" max="1200" step="10" value="600" required />
+                <span>мм</span>
+              </div>
+            </label>
+
+            <label class="field">
+              <span>Высота <small>мм</small></span>
+              <div class="input-wrap">
+                <input id="height" name="height" type="number" min="250" max="1500" step="10" value="800" required />
+                <span>мм</span>
+              </div>
+            </label>
+
+            <label class="field">
+              <span>Глубина <small>мм</small></span>
+              <div class="input-wrap">
+                <input id="depth" name="depth" type="number" min="200" max="800" step="10" value="400" required />
+                <span>мм</span>
+              </div>
+            </label>
+          </form>
+
+          <div class="section-divider"></div>
+
+          <div class="section-title">
+            <h3>Цвет корпуса</h3>
+            <span class="muted">3 варианта</span>
+          </div>
+          <div class="swatches" role="group" aria-label="Выбор цвета">
+            <button type="button" class="swatch" data-material="white" aria-pressed="false">
+              <span class="swatch-color white"></span><span>Белый</span>
+            </button>
+            <button type="button" class="swatch" data-material="gray" aria-pressed="false">
+              <span class="swatch-color gray"></span><span>Серый</span>
+            </button>
+            <button type="button" class="swatch active" data-material="walnut" aria-pressed="true">
+              <span class="swatch-color walnut"></span><span>Орех</span>
+            </button>
+          </div>
+
+          <div class="spec-card">
+            <div class="spec-icon">↗</div>
+            <div>
+              <strong>Интерактивная модель</strong>
+              <p>Вращайте модель, чтобы рассмотреть её со всех сторон.</p>
+            </div>
+          </div>
+
+          <p class="footnote">Демонстрационная модель. Толщина панелей — 18 мм.</p>
+        </aside>
+      </main>
+      <footer class="page-footer">Qdesign.kz · Тестовое задание · Three.js</footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
